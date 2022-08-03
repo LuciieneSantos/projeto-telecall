@@ -1,0 +1,50 @@
+#button{
+
+    margin-top: 20px;
+}
+
+
+body {
+    background: #e0362d;
+    background: linear-gradient(to right, #e0362d, #e0362d);
+  }
+  
+  .card-img-left {
+    width: 45%;
+    /* Link to your background image using in the property below! */
+    background: scroll center url('../cadastro/img/Infográfico\ de\ Processo\ Negrito\ e\ Blocos\ Verde-oliva.png');
+    background-size: cover;
+    
+  }
+
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .btn-google {
+    color: white !important;
+    background-color: #ea4335;
+  }
+  
+  .btn-facebook {
+    color: white !important;
+    background-color: #e0362d;
+  }
+
+  #senha {
+    width: 150px;
+    padding-right: 20px;
+  }
+  
+  #confirmasenha {
+    width: 150px;
+    padding-right: 20px;
+  }
+  .olho {
+    cursor: pointer;
+    left: 160px;
+    position: absolute;
+    width: 20px;
+  }

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="../cadastro/style.css" media="screen" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
+   
+   
+
+    
+    <title>Document</title>
+</head>
+<body  >
+ 
+    
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+          <div class="card-img-left d-none d-md-flex">
+            <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-5">Cadastre-se</h5>
+  
+
+      <div id="sucesso">  </div>
+
+      <div id="erro">  </div>
+
+    <form   name="form"  >
+        <div class="mb-3">
+         
+          <label for="validationDefault01" id="labelnome" class="form-label">Nome completo</label>
+          <div id="divNome"></div> 
+          <div class="input-group">
+            
+            <input type="text" name="nomeCompleto" id="nomec" minlength="13" maxlength="60" pattern="([aA-zZ]+)"  onkeypress="return /^[a-zA-Z\s]*$/i.test(event.key)" placeholder="Apenas letras" class="form-control"  required>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="validationDefault02"  id="labelmaterno" class="form-label"> Nome Materno</label>
+          <div id="divNomematerno"></div>
+          <div class="input-group">
+            <input type="text" minlength="15" id="nomem" name="nomeMaterno"  maxlength="60"  onkeypress="return /^[a-zA-Z\s]*$/i.test(event.key)" class="form-control"  required>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="validationDefaultUsername" id="labeldata" class="form-label">Data de nascimento</label>
+          <div id="divdata"></div>
+          <div class="input-group">
+
+           
+            <input type="date"  id="data" oninput="datavalid(validadata(this.value))"  name="datanascimento" class="form-control"  required>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="validationDefault03"  id="campo_cpf"  class="form-label">CPF</label>
+          <div id="divcpf"></div>
+          <div class="input-group">
+            
+            <input type="text" class="form-control" name="cpff" placeholder="Apenas Números" aria-describedby="inputGroupPrepend2" id="cpf"   oninput="validacpf(TestaCPF(this.value)), mascara(this);" required>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="validationDefault04" class="form-label">Sexo</label>
+          <select class="form-select"  name="sexo"  id="validationDefault04" required>
+            <option selected disabled value="">Escolha...</option>
+            <option>Feminino</option>
+            <option>Masculina</option>
+            <option>Outros</option>
+          </select>
+        </div>
+         
+        <div class="mb-3">
+          <label for="validationTooltip01" class="form-label">Telefone celular</label>
+          <div id="divtelefonecel"></div>
+          <div class="input-group">
+            
+            <input type="text" class="form-control" name="telefoneCelular" id="campo_celular" placeholder="Apenas Números"  oninput="cel(this)" aria-describedby="inputGroupPrepend2" required>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="validationTooltip01" class="form-label">Telefone fixo</label>
+          <div id="divtelefonetel"></div>
+          <div class="input-group">
+            
+            <input type="tel" class="form-control" name="telefoneFixo"  id="campo_fixo" placeholder="Apenas Números"  oninput="tel(this)" aria-describedby="inputGroupPrepend2" required>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="validationTooltip01" class="form-label">CEP</label>
+          <div id="divcep"></div>
+          <div class="input-group">
+            
+            <input type="text"  name="cep" class="form-control"  onkeypress="return /[0-9]/i.test(event.key)" id="cep"  required>
+          </div>
+        </div>
+       
+        <div class="mb-3">
+          <label for="validationTooltip01" class="form-label">Endereço completo</label>
+          <div id="divendereco"></div>
+          <div class="input-group">
+            
+            <input type="text"  class="form-control"name="endereco" id="endereco" required>
+          </div>
+      
+   
+        <div class="mb-3">
+          <label for="validationTooltip01" class="form-label">Senha</label>
+          <div id="divsenha"></div>
+          <div class="input-group">
+            
+            <input type="password"  class="form-control" name="senha" id="senha" required>
+            
+          </div>
+          <input type="checkbox" onclick="myFunction()"> mostrar senha
+        </div>
+        <div class="mb-3">
+          <label for="validationTooltip01" class="form-label">Confirmar Senha</label>
+          <div id="divconfirmarsenha"></div>
+          <div class="input-group">
+           
+            <input type="password"  class="form-control"  name="confirmarSenha" id="confirmarsenha" required>
+          
+ 
+          </div>
+          <input type="checkbox" onclick="myFunction()"> mostrar senha
+        </div>
+         
+
+        <div class="mb-3">
+          <label for="validationTooltip01" class="form-label">Email</label>
+          <div id="divemail"></div>
+          <div class="input-group">
+            
+            <input type="email"  class="form-control" oninput="validate(this.value)" id="email"  name="email"  required>
+          </div>
+        </div>
+        
+        </div>
+       
+        <div id="button"   class="col-12">
+          <button onclick="cadastrar()"  class="btn btn-danger btn-danger btn-login text-uppercase fw-bold mb-2" type="button">Cadastrar</button>
+        </div>
+        
+      </form>
+      
+     
+    
+   </div>
+  
+  
+ 
+</body>
+
+<script src="script.js"></script>
+<script src="../cadastro/validacao.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
+</html>
